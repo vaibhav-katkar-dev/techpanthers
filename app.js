@@ -47,21 +47,36 @@ function suggestNewStore(city) {
 var city='Mumbai';
 
 app.get("/",(req,res)=>{
-    console.log(suggestNewStore("Pune"));
-    res.render("home.ejs");
+    // console.log(suggestNewStore("Pune"));
+    // res.render("home.ejs",{c:data.cities});
+    res.redirect("/dash");
 });
+
+app.post("/index/add",(req,res)=>{
+    let data = req.body;
+    console.log(data,"=========");
+})
 
 app.get("/index",(req,res)=>{
     io.on("connection",(socket)=>{
         console.log("connected",citiesData);
         
 
-        socket.emit("data",citiesData);
+        socket.emit("data1",citiesData);
     })
     // console.log(data.cities[city]);
     res.render("index.ejs",{c:data.cities[city]});
 });
+app.get("/dash",(req,res)=>{
+    // console.log(data.cities["Pune"]);
+    res.render("dash.ejs",{ cities:data.cities});
+});
 
+// app.post('/add', (req, res) => {
+//     const selectedCity = req.body['store-type']; // Get selected city
+//     console.log("User selected:", selectedCity);
+//     res.redirect("/dash");
+// });
 server.listen(8080,()=>{
     console.log("app is listing...");
 });
