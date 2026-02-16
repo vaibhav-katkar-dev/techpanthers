@@ -100,7 +100,7 @@ Follow these steps to set up the project locally.
 
 This project is currently a **Small MVP (Minimum Viable Product) Prototype**. The screenshot below demonstrates the core functionality, including the dashboard, city selection, heatmap analysis, and population density charts.
 
-![MVP Dashboard Prototype](mvp_dashboard.png)
+![MVP Dashboard Prototype](https://github.com/vaibhav-katkar-dev/techpanthers/blob/main/mvp_dashboard.PNG)
 
 ---
 
